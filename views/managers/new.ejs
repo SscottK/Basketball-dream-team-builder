@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Manager</title>
+</head>
+<body>
+    <%- include('../partials/_navbar.ejs') %>
+    <form action="/managers" method="POST">
+        Name: <input type="text" name="name" /><br />
+        Team name: <input type="text" name="teamName" /><br />
+        
+        <button type="submit">Create Manager</button>
+    </form>
+</body>
+</html>
