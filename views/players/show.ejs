@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team</title>
+</head>
+<body>
+    <%- include('../partials/_navbar.ejs') %>
+    <h1>Looking at <%= player.name%></h1>
+    <h2>Player info:</h2>
+        
+        <p>Click on a player to view their info</p>
+        <% team.players.forEach((player) => { %>
+            <a href="/players/<%= player._id %>">
+                <h2><%=player.name%></h2>
+            </a>
+        <% }); %>
+        <% } else { %>
+            No Players on Team
+             <a href="/players/new">Add New Player</a>
+        <% }%>
+        <form action="/teams/<%= team._id %>?_method=DELETE" method="POST">
+            <button type="submit">Remove Team</button>
+        </form>
+        <a href="/managers/<%= team.manager %>">Back to Manager info</a>
+   
+</html>

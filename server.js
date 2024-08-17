@@ -4,7 +4,9 @@ const app = express()
 const methodOverrride = require('method-override')
 const mongoose = require('mongoose')
 const MONGO_URI = process.env.MONGO_URI
+const session = require('express-session')
 const managerRouter = require('./routes/managers')
+const teamsRouter = require('./routes/teams')
 
 
 mongoose.connect(MONGO_URI)
@@ -23,6 +25,13 @@ app.use((req, res, next) => {
     next()
 })
 app.use(methodOverrride('_method'))
+app.use(
+    session({
+        secret: process.env.SECRET_SESSION,
+        resave: false,
+        saveUninitialized: true
+    })
+)
 app.use('/assets', express.static('public'))
 
 app.get('/', (req, res) => {    
@@ -30,7 +39,7 @@ app.get('/', (req, res) => {
 })
 
 app.use('/managers', managerRouter)
-
+app.use('/teams', teamsRouter)
 
 
 app.listen(3000, () => {

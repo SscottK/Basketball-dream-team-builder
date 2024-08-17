@@ -6,10 +6,10 @@
     <title>Edit Manager Details</title>
 </head>
 <body>
-    <%- include('./partials/_navbar.ejs') %>
+    <%- include('../partials/_navbar.ejs') %>
     <h1>Edit <%= manager.name %></h1>
     <form action="/managers/<%= manager._id %>?_method=PUT" method="POST">
-        Name: <input type="text" name="name" value=" <%= manager.name %>"><br />
+        Name: <input type="text" name="name" value=" <%= manager.name %>"><br />        
         Team Name: <input type="text" name="teamName" value="<%= manager.teamName %>"><br />
         <button type="submit">Update Manager Details</button>
     </form>

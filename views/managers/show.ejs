@@ -9,10 +9,21 @@
     <%- include('../partials/_navbar.ejs') %>
     <h1>Manager Details</h1>
     <p>Name: <%= manager.name %> <br />
-        Team Name: <%= manager.teamName %> <br />
+        Team Name: 
+        <% if (manager.teamName) { %>
+            <a href="/teams/<%= manager.teamId%>"><%= manager.teamName %> </a><br />
+        <% } else { %>
+         No team Created yet
+        <% } %>
+
     </p>
     <form action="/managers/<%= manager._id %>?_method=DELETE" method="POST">
         <button type="submit">Remove Manager</button>
     </form>
+    <% if (!manager.players) { %>
+        <a href="/teams/new">Create team</a>
+    <% } %>
+    
+    <a href="/managers/<%= manager._id%>/edit">Edit Manager</a>
 </body>
 </html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Player</title>
+</head>
+<body>
+    <%- include('../partials/_navbar.ejs') %>
+    <form action="/players" method="POST">
+        Name: <input type="text" name="name" id="name" />
+        Position: <input type="text" name="position" id="position" />
+        Is a Starter: <input type="checkbox" name="isStarter" />
+        
+        
+        <button type="submit">Add Player</button>
+    </form>
+</body>
+</html>
