@@ -6,7 +6,7 @@ const playerCtrl = require('../controllers/players')
 //NEW
 router.get('/new', playerCtrl.addNewPlayer)
 //DESTROY
-router.delete('/:id', playerCtrl.destroy)
+router.delete('/:teamid/players/:id', playerCtrl.destroy)
 //CREATE
 router.post('/', playerCtrl.createPlayer)
 

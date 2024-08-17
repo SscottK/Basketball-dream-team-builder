@@ -11,8 +11,8 @@ const addNewPlayer = (req, res) => {
 
 const destroy = async (req, res) => {
     try {
-         
-        await Player.findByIdAndDelete(req.params.id).then((player) => {
+        const team = await Team.findById({_id: req.params.teamid}) 
+        await Player.findByIdAndDelete({ _id: req.params.id}).then((player) => {
             res.redirect('/managers')   
         })
         

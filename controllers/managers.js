@@ -77,15 +77,7 @@ const update = async (req, res) => {
     }
 }
 
-// const createManager = async (req, res) => {
-//     try {
-//         const createdManager = await Manager.create(req.body)
-//         await createdManager.save()
-//         res.redirect(`/managers/${createdManager._id}`)
-//     } catch (error) {
-//         res.status(400).json({ msg: error.message })
-//     }
-// }
+
 
 const edit = async (req, res) => {
     try {
