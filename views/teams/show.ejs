@@ -18,7 +18,7 @@
         <% }); %>
         <% } else { %>
             No Players on Team
-             <a href="/players/new">Add New Player</a>
+             <a href="/teams/new">Add New Player</a>
         <% }%>
         <form action="/teams/<%= team._id %>?_method=DELETE" method="POST">
             <button type="submit">Remove Team</button>

@@ -11,7 +11,7 @@ const signUp = async (req, res) => {
         
         const hashedPassword = bcrypt.hashSync(req.body.password, 10)
         req.body.password = hashedPassword
-        await Manager.create(req.body).then(() => res.redirect('/mangers/sign-in'))
+        await Manager.create(req.body).then(() => res.redirect('/managers/sign-in'))
     } catch (error) {
         res.status(400).json({ msg: error.message })
     }

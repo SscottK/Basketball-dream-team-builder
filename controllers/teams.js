@@ -4,7 +4,7 @@ const Manager = require('../models/manager')
 
 
 
-const addNewTeam = async (req, res) => {
+const addNewTeam = (req, res) => {
     res.render('teams/new.ejs')
 }
 
@@ -44,16 +44,7 @@ const createTeam = async (req, res) => {
     }
 }
 
-const edit = async (req, res) => {
-    try {
-        const foundTeam = await Team.findOne({ _id: req.params.id })
-        res.render('teams/edit.ejs', {
-            team: foundTeam
-        })
-    } catch (error) {
-        res.status(400).json({ msg: error.message })
-    }
-}
+
 
 const show = async (req, res) => {
     try {
@@ -72,6 +63,5 @@ module.exports = {
     destroy,
     update,
     createTeam,
-    edit,
     show,
 }
