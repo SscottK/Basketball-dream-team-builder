@@ -4,17 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/assets/css/styles.css">
-    <title>Create Team</title>
+    <title>Edit Team</title>
 </head>
 <body>
     <div id="all">
     <%- include('../partials/_navbar.ejs') %>
-    
-    <form action="/teams" method="POST">
-        
-        
-        <button type="submit">Create Team</button>
+    <h1>Edit team</h1>
+
+    <form action="/teams/<%= team._id %>?_method=PUT" method="POST">
+
+        Player: <input type="text" name="addedPlayer" id="addedPlayer">
+        <button type="submit">Update Team</button>
     </form>
-    </div>
+</div>
 </body>
 </html>

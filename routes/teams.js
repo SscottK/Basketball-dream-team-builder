@@ -11,7 +11,8 @@ router.delete('/:id', teamCtrl.destroy)
 router.put('/:id', teamCtrl.update)
 //CREATE
 router.post('/', teamCtrl.createTeam)
-
+//EDIT
+router.get('/:id/edit', teamCtrl.editTeam)
 //SHOW
 router.get('/:id', teamCtrl.show)
 

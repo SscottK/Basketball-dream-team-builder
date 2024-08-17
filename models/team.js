@@ -5,7 +5,7 @@ const mongoose = require('mongoose')
 
 const teamSchema = new mongoose.Schema({
     manager: {type: mongoose.Schema.Types.ObjectId, ref: 'Manager'},
-    teamName: {type: mongoose.Schema.Types.ObjectId, ref: 'Manager'},
+    teamName: {type: String},
     players: [{type: mongoose.Schema.Types.ObjectId, ref: 'Player'}],
     ratings: [{type: mongoose.Schema.Types.ObjectId, ref: 'Rating'}]
 })

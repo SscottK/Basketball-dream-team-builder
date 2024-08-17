@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/styles.css">
     <title>All Managers</title>
 </head>
 <body>
+    <div id="all">
     <%- include('../partials/_navbar.ejs') %>
     <h1>Welcome to the Manager List</h1>
     <p>find a manager</p>
@@ -15,5 +17,5 @@
                 <h2><%=manager.name%></h2>
             </a>
         <% }); %>
-   
+   </div>
 </html>

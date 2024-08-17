@@ -9,17 +9,14 @@
     <%- include('../partials/_navbar.ejs') %>
     <h1>Looking at <%= player.name%></h1>
     <h2>Player info:</h2>
-        
+
         <p>Click on a player to view their info</p>
         <% team.players.forEach((player) => { %>
             <a href="/players/<%= player._id %>">
                 <h2><%=player.name%></h2>
             </a>
         <% }); %>
-        <% } else { %>
-            No Players on Team
-             <a href="/players/new">Add New Player</a>
-        <% }%>
+
         <form action="/teams/<%= team._id %>?_method=DELETE" method="POST">
             <button type="submit">Remove Team</button>
         </form>
